@@ -1,0 +1,96 @@
+<article class="estadistica active" data-page="estadistica">
+
+    <header>
+        <h2 class="h2 article-title">Estadística</h2>
+    </header>
+
+    <h2>Incidentes dentro de las Unidades Educativas</h2>
+    <label class="filter-label">Filtrar por:</label>
+    <div class="contenedor_filtro">
+        <div class="filter-container">
+            <label class="filter-label" for="filterSector">Sector</label>
+            <select class="filter-select" id="filterSector" #filterSectorSelect
+                (change)="filterBySector(filterSectorSelect.value)">
+                <option value="all">Todos</option>
+                <option *ngFor="let sector of sectors" [value]="sector">{{ sector }}</option>
+            </select>
+        </div>
+        <div class="filter-container">
+            <label class="filter-label" for="filterUnidadEducativa">Unidad Educativa</label>
+            <select class="filter-select" id="filterUnidadEducativa" #filterUnidadEduSelect
+                (change)="filterByCollegeUE(filterUnidadEduSelect.value)" [disabled]="isCollegeSelectDisabled">
+                <option value="all">Todos</option>
+                <option *ngFor="let college of colleges" [value]="college">{{ college }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="contenedor_filtro">
+        <div class="filter-container">
+            <label class="filter-label" for="filterYearUE">Año</label>
+            <select class="filter-select" id="filterYearUE" #filterYearSelectUE
+                (change)="filterByYearUE(filterYearSelectUE.value)">
+                <option value="all">Todos</option>
+                <option *ngFor="let year of yearsUE" [value]="year">{{ year }}</option>
+            </select>
+        </div>
+        <div class="filter-container">
+            <label class="filter-label" for="filterMonthUE">Mes</label>
+            <select class="filter-select" id="filterMonthUE" #filterMonthSelect
+                (change)="filterByMonthUE(filterMonthSelect.value)" [disabled]="isMonthSelectDisabled">
+                <option value="all">Todos</option>
+                <option *ngFor="let month of monthUEString" [value]="month">{{ month }}</option>
+            </select>
+        </div>
+
+    </div>
+
+    <!-- //TABLA QUE MUESTRA LOS DATOS -->
+    <div class="grafica1_estadistica">
+        <div class="tabla-estadistica">
+            <table mat-table [dataSource]="filteredTransactionsUE" class="mat-elevation-z8 tamaño-tabla">
+                <!-- Item Column -->
+                <ng-container matColumnDef="item">
+                    <th mat-header-cell *matHeaderCellDef> Incidentes </th>
+                    <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
+                    <td mat-footer-cell *matFooterCellDef> Total </td>
+                </ng-container>
+                <!-- Cost Column -->
+                <ng-container matColumnDef="cost">
+                    <th mat-header-cell *matHeaderCellDef> Cont </th>
+                    <td mat-cell *matCellDef="let transaction"> {{transaction.cost}} </td>
+                    <td mat-footer-cell *matFooterCellDef> {{totalCosto()}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsUE"></tr>
+                <tr mat-row class="tabla-fila" *matRowDef="let row; columns: displayedColumnsUE;"></tr>
+                <tr mat-footer-row *matFooterRowDef="displayedColumnsUE"></tr>
+            </table>
+        </div>
+
+        <div class="grafico_linea_estadistica">
+            <div class="card">
+                <!-- <app-grafico1 [transactions]="filteredTransactions"></app-grafico1> -->
+                <app-grafico1-f2 [transactions]="filteredTransactionsUE"></app-grafico1-f2>
+            </div>
+        </div>
+    </div>
+
+    <div id="reportePandillas">
+        ** La cantidad de encuestados que respondió haber identificado a <span class="textoNeg">GRUPOS JUVENILES
+            PROBLEMÁTICOS</span> en su Unidad Educativa respectiva es de <span class="textoNeg">{{pandillas }}</span>,
+        que corresponde al {{ (pandillas/totalPandillas*100).toFixed(2) }}% de un total de <span class="textoNeg">{{
+            totalPandillas}}</span> encuestados.
+        <br>
+        Sin embargo, no se ha tomado este dato dentro de los gráficos anteriores, ya que no se considera un incidente
+        particular.
+
+
+    </div>
+
+    <!-- SEGUNDO GRÁFICO -->
+    <div class="grafico_lineal">
+        <app-grafico2-f2></app-grafico2-f2>
+    </div>
+
+
+</article>

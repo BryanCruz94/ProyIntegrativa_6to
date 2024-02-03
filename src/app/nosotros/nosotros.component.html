@@ -1,0 +1,155 @@
+<article class="about active" data-page="nosotros">
+    <header>
+        <h2 class="h2 article-title">Sobre Nosotros</h2>
+    </header>
+
+    <style>
+        .contenedor-redondeado-Fases {
+            background-color: #F5F5F5;
+            /* Color de fondo celeste */
+            border-radius: 10px;
+            /* Borde redondeado de 10px (ajusta según lo desees) */
+            padding: 20px;
+            /* Relleno interior del contenedor */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            /* Sombra con desplazamiento y opacidad */
+        }
+
+        .h1.form-title.title_desarrolladores.form-title.title_desarrolladores {
+            font-family: 'Tahoma', sans-serif;
+            /* Cambia la fuente del texto */
+            text-align: center;
+            /* Centra el texto */
+            font-size: 35px;
+            /* Cambia el tamaño de la fuente */
+            color: #333;
+            /* Cambia el color del texto */
+            font-weight: bold;
+            /* Hace que el texto sea negrita */
+
+        }
+
+        a {
+            color: #075f11;
+            /* Cambia #FF0000 al color que desees */
+            text-decoration: none;
+            /* Elimina la subrayado predeterminado */
+            /* colocar negrita y cursiva */
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+
+    <section>
+        <h3 class="h3 form-title title_desarrolladores">Equipo de desarrollo</h3>
+        <div class="img_general_mosotros">
+            <img class="imagenITIN" src="assets/img/logos/ITIN.png" alt="Itin">
+        </div>
+        <!-- <p class="service-item-text" style="text-align: justify; ">
+            El aplicativo web “SCHOOLAR SECURITY ENCUESTAS” que se presenta es una herramienta diseñada para facilitar
+            la gestión de la seguridad en las parroquias o comunidades educativas. A través de esta plataforma, tendrán
+            acceso a información relevante sobre incidentes de seguridad, zonas de riesgo, ubicación de escuelas y
+            entidades públicas, todos ellos referenciados en el sitio <a
+                href="http://educaciondigital.espe.edu.ec:8081/schoolarSecurity" target="_blank"
+                style="display:inline;  white-space: nowrap;">SCHOOLAR SECURITY</a>.
+        </p>
+        <br>
+        <p class="service-item-text" style=" text-align: justify;">
+            Asimismo, el objetivo principal de este desarrollo web es proporcionar una amplia variedad de estadísticas
+            que reflejen la evolución de los incidentes de seguridad a lo largo de los días, meses, semanas y años en la
+            comunidad.
+
+        </p> -->
+        <p>
+          La página Web ha sido desarrollada e implementada por estudiantes de la carrera de ITIN del grupo I de la materia
+          Programación Integrativa. Quienes encontraron una necesidad en la comunidad educativa y decidieron aportar con
+          una solución a través de la creación de esta herramienta.
+        </p>
+        <br>
+        <div class="contenedor-redondeado-Fases">
+            <h2 class="h1 form-title title_desarrolladores">Grupo 1</h2>
+            <h3 class="h3 form-title title_desarrolladores">Estudiantes </h3>
+            <div class="contenedor_foto">
+                <div *ngFor="let datosWebF2 of datosWebF2">
+                    <figure class="targeta_foto">
+                        <div>
+                            <img class="fotosAdmin" src="{{ datosWebF2.url }}" alt="{{ datosWebF2.name }}">
+                        </div>
+                        <h4 class="h4 form-title">{{ datosWebF2.name }}</h4>
+                        <hr class="separador_admins">
+                        <div class="contenedor_info">
+                            <h5>{{ datosWebF2.range }}</h5>
+                            <p>{{ datosWebF2.gmail }}</p>
+                        </div>
+                        <hr class="separador_admins">
+                    </figure>
+                </div>
+            </div>
+            <br>
+            <!-- <br>
+            <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil</h3>
+            <div class="contenedor_foto">
+                <div *ngFor="let datosMovilF2 of datosMovilF2">
+                    <figure class="targeta_foto">
+                        <div>
+                            <img class="fotosAdmin" src="{{ datosMovilF2.url }}" alt="{{ datosMovilF2.name }}">
+                        </div>
+                        <h4 class="h4 form-title">{{ datosMovilF2.name }}</h4>
+                        <hr class="separador_admins">
+                        <div class="contenedor_info">
+                            <h5>{{ datosMovilF2.range }}</h5>
+                            <p>{{ datosMovilF2.gmail }}</p>
+                        </div>
+                        <hr class="separador_admins">
+                    </figure>
+                </div>
+            </div> -->
+            <br>
+        </div>
+        <br>
+
+
+        <!-- <div class="contenedor-redondeado-Fases">
+            <div class="service-content-box">
+                <h2 class="h1 form-title title_desarrolladores">Fase I</h2>
+                <h3 class="h3 form-title title_desarrolladores">Desarrolladores Web</h3>
+                <div class="contenedor_foto">
+                    <div *ngFor="let datosWeb of datosWeb">
+                        <figure class="targeta_foto">
+                            <div>
+                                <img class="fotosAdmin" src="{{ datosWeb.url }}" alt="{{ datosWeb.name }}">
+                            </div>
+                            <h4 class="h4 form-title">{{ datosWeb.name }}</h4>
+                            <hr class="separador_admins">
+                            <div class="contenedor_info">
+                                <h5>{{ datosWeb.range }}</h5>
+                                <p>{{ datosWeb.gmail }}</p>
+                            </div>
+                            <hr class="separador_admins">
+                        </figure>
+                    </div>
+                </div>
+
+                <br>
+                <h3 class="h3 form-title title_desarrolladores">Desarrolladores Móvil </h3>
+                <div class="contenedor_foto">
+                    <div *ngFor="let datosMovil of datosMovil">
+                        <figure class="targeta_foto">
+                            <div>
+                                <img class="fotosAdmin" src="{{ datosMovil.url }}" alt="{{ datosMovil.name }}">
+                            </div>
+                            <h4 class="h4 form-title">{{ datosMovil.name }}</h4>
+                            <hr class="separador_admins">
+                            <div class="contenedor_info">
+                                <h5>{{ datosMovil.range }}</h5>
+                                <p>{{ datosMovil.gmail }}</p>
+                            </div>
+                            <hr class="separador_admins">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div> -->
+    </section>
+</article>

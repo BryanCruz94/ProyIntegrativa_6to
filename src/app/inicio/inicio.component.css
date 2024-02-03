@@ -1,0 +1,183 @@
+/* Estilos para el primer contenedor */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+/* Estilos para el contenedor dividido en tres partes proporcionales */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    max-width: 800px;
+    flex-wrap: wrap;
+}
+
+/* Estilos para el título */
+.title-container {
+    flex-basis: 100%;
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Estilos para el contenedor de la imagen y el texto */
+.image-container,
+.text-container {
+    flex-basis: calc(50% - 10px); /* Dividimos en 2 columnas con un espacio de 10px entre ellas */
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; /* Agregamos margen arriba y abajo */
+}
+
+.portadaInicio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para el contenedor del texto */
+.text-container {
+    text-align: justify;
+    color: #555;
+}
+
+.text-container p {
+    text-align: justify;
+    margin: 0;
+}
+
+/* Estilos para el tercer contenedor original con cartas */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea las cartas en la parte superior en lugar de estirarlas */
+    margin-top: 20px;
+}
+
+.card {
+    flex-basis: calc(33.33% - 10px); /* Dividimos en 3 columnas con un espacio de 10px entre ellas */
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 5px; /* Reducimos el margen horizontal para evitar el desorden */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.iconos_stats {
+    width: 128px;
+    height: 128px;
+    padding-bottom: 10px;
+    margin-left: 0;
+}
+
+.p_stats {
+    color: #3b3c3f;
+    text-align: justify;
+    padding-top: 10px;
+}
+
+.h2_iconos {
+    text-align: left;
+    margin-left: 0;
+    padding-top: 50px;
+}
+
+
+/* Media queries para hacer el diseño responsive */
+/* Media query para hacer el diseño responsive en iPads y dispositivos similares */
+/* Media query para hacer el diseño responsive en iPads y dispositivos similares */
+@media screen and (max-width: 768px) {
+    .container {
+        text-align: left;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container,
+    .text-container {
+        flex-basis: 100%;
+    }
+
+    .card-container {
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .card {
+        flex-basis: 100%; /* Las cartas ocuparán todo el ancho */
+        margin-right: 0; /* Sin margen derecho */
+        margin-bottom: 20px;
+    }
+
+    .image-container {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+
+    .text-container {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+
+    .title-container {
+        flex-basis: 100%;
+    }
+    
+    .title-container img {
+        display: block;
+        margin: 0 auto;
+    }
+    .filter-list.encabezado {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+
+    .filter-list.encabezado li {
+        flex-basis: calc(33.33% - 10px);
+        margin-bottom: 10px;
+    }
+}
+
+/* Estilos para las imágenes de iconos stats */
+.iconos_stats {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+
+/* Media query para hacer el diseño responsive en dispositivos móviles */
+@media screen and (max-width: 480px) {
+    .card {
+        flex-basis: 100%; /* Las cartas ocuparán todo el ancho */
+        margin-right: 0; /* Sin margen derecho */
+        margin-bottom: 20px;
+    }
+}
+
+a {
+    color: #075f11; /* Cambia #FF0000 al color que desees */
+    text-decoration: none; /* Elimina la subrayado predeterminado */
+    /* colocar negrita y cursiva */
+    font-weight: bold;
+    font-style: italic;
+}
